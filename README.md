@@ -44,4 +44,8 @@
 
     and add `"plugin:prettier/recommended"` under `extends` in .eslintrc.json
 
-**Peronal Notes:** The difference between npm and npx is that npm is a package manager to install node packages golbally, where as npx is tool to execute packages. Packages used by npx are not installed globally so you have to carefree for the pollution for the long term.
+**Peronal Notes:**
+
+-   The difference between npm and npx is that npm is a package manager to install node packages golbally, where as npx is tool to execute packages. Packages used by npx are not installed globally so you have to carefree for the pollution for the long term.
+
+-   When open sourcing projects or working as a group, its a good practice to setup linting.
