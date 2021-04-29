@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+<h1 align="center" style="font-weight:bold">Getting started with eslint for React</h1>
+<p align="center">This repository contains the notes and code which I used to learn how to setup eslint for react projects</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2 style="font-weight:bold">Instructions</h2>
 
-## Available Scripts
+1. Install eslint and create a config file
 
-In the project directory, you can run:
+    ```
+    npm install eslint --save-dev
+    npx esline --init
+    ```
 
-### `npm start`
+2. Personal Preference, inside the .eslintrc.json add `react/react-in-jsx-scope": "off"` under the rules. Add `"jest": true` under env.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Update the settings.json in the vscode
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    ```json
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.alwaysShowStatus": true,
+    "files.autoSave": "onFocusChange",
+    "eslint.validate": [
+        "javascript"
+    ],
 
-### `npm test`
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Add this to package.json
 
-### `npm run build`
+    ```json
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix"
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Now `npm run lint:fix` will enfore the linting style to the changes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5. (Optional) To setup prettier, install the following packages
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```bash
+    npm uninstall eslint-config-prettier eslint-plugin-prettier prettier --save-dev
+    ```
 
-### `npm run eject`
+    and add `"plugin:prettier/recommended"` under `extends` in .eslintrc.json
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Peronal Notes:** The difference between npm and npx is that npm is a package manager to install node packages golbally, where as npx is tool to execute packages. Packages used by npx are not installed globally so you have to carefree for the pollution for the long term.
