@@ -54,7 +54,7 @@
 5. (Optional) To setup prettier, install the following packages
 
     ```bash
-    npm uninstall eslint-config-prettier eslint-plugin-prettier prettier --save-dev
+    npm install eslint-config-prettier eslint-plugin-prettier prettier --save-dev
     ```
 
     and add `"plugin:prettier/recommended"` under `extends` in .eslintrc.json
