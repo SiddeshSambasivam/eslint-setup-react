@@ -10,7 +10,22 @@
     npx eslint --init
     ```
 
-2. Personal Preference, inside the .eslintrc.json add `react/react-in-jsx-scope": "off"` under the rules. Add `"jest": true` under env.
+2. Personal Preference, inside the .eslintrc.json add
+
+    ```json
+    "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+    "no-unused-vars": "warn",
+    ```
+
+    under the rules. Add `"jest": true` under env.
 
 3. Update the settings.json in the vscode
 
