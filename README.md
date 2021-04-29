@@ -23,6 +23,7 @@
             }
         ],
     "no-unused-vars": "warn",
+    "import/prefer-default-export": 0
     ```
 
     under the rules. Add `"jest": true` under env.
